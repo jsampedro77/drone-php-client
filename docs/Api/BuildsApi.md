@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **reposOwnerNameBuildsGet**
-> \DroneClient\DroneClient\Build[] reposOwnerNameBuildsGet($owner, $name)
+> \DroneClient\Build[] reposOwnerNameBuildsGet($owner, $name)
 
 Get recent builds
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\DroneClient\DroneClient\Build[]**](../Model/Build.md)
+[**\DroneClient\Build[]**](../Model/Build.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reposOwnerNameBuildsNumberGet**
-> \DroneClient\DroneClient\Build reposOwnerNameBuildsNumberGet($owner, $name, $number, $branch)
+> \DroneClient\Build reposOwnerNameBuildsNumberGet($owner, $name, $number, $branch)
 
 Get the latest build
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\DroneClient\DroneClient\Build**](../Model/Build.md)
+[**\DroneClient\Build**](../Model/Build.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reposOwnerNameBuildsNumberPost**
-> \DroneClient\DroneClient\Build reposOwnerNameBuildsNumberPost($owner, $name, $number)
+> \DroneClient\Build reposOwnerNameBuildsNumberPost($owner, $name, $number)
 
 Restart a build
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\DroneClient\DroneClient\Build**](../Model/Build.md)
+[**\DroneClient\Build**](../Model/Build.md)
 
 ### Authorization
 

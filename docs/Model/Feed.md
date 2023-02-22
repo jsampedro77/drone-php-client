@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **name** | **string** | The name of the repository. | [optional] 
 **full_name** | **string** | The full name of the repository.  This is created from the owner and name of the repository. | [optional] 
 **number** | **int** | The build number.  This number is specified within the context of the repository the build belongs to and is unique within that. | [optional] 
-**status** | [**\DroneClient\DroneClient\DefinitionsBuildStatus**](DefinitionsBuildStatus.md) | The current status of the build. | [optional] 
+**status** | [**\DroneClient\DefinitionsBuildStatus**](DefinitionsBuildStatus.md) | The current status of the build. | [optional] 
 **created_at** | **int** | When the build request was received. | [optional] 
 **enqueued_at** | **int** | When the build was enqueued. | [optional] 
 **started_at** | **int** | When the build began execution. | [optional] 

@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace DroneClient\DroneClient;
+namespace DroneClient;
 
 /**
  * BuildStatus Class Doc Comment

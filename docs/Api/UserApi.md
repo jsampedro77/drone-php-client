@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **userGet**
-> \DroneClient\DroneClient\User userGet()
+> \DroneClient\User userGet()
 
 Gets a user
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\DroneClient\DroneClient\User**](../Model/User.md)
+[**\DroneClient\User**](../Model/User.md)
 
 ### Authorization
 
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userPatch**
-> \DroneClient\DroneClient\User userPatch($user)
+> \DroneClient\User userPatch($user)
 
 Updates a user
 
@@ -73,7 +73,7 @@ DroneClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 
 // DroneClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
 $api_instance = new DroneClient\Api\UserApi(new \Http\Adapter\Guzzle6\Client());
-$user = new \DroneClient\DroneClient\User(); // \DroneClient\DroneClient\User | Updates to the user.
+$user = new \DroneClient\User(); // \DroneClient\User | Updates to the user.
 
 try {
     $result = $api_instance->userPatch($user);
@@ -88,11 +88,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**\DroneClient\DroneClient\User**](../Model/User.md)| Updates to the user. |
+ **user** | [**\DroneClient\User**](../Model/User.md)| Updates to the user. |
 
 ### Return type
 
-[**\DroneClient\DroneClient\User**](../Model/User.md)
+[**\DroneClient\User**](../Model/User.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userReposGet**
-> \DroneClient\DroneClient\Repo[] userReposGet()
+> \DroneClient\Repo[] userReposGet()
 
 Get user repos
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\DroneClient\DroneClient\Repo[]**](../Model/Repo.md)
+[**\DroneClient\Repo[]**](../Model/Repo.md)
 
 ### Authorization
 

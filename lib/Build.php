@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace DroneClient\DroneClient;
+namespace DroneClient;
 
 use \ArrayAccess;
 
@@ -57,7 +57,7 @@ class Build implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'number' => 'int',
-        'status' => '\DroneClient\DroneClient\DefinitionsBuildStatus',
+        'status' => '\DroneClient\DefinitionsBuildStatus',
         'created_at' => 'int',
         'enqueued_at' => 'int',
         'started_at' => 'int',
@@ -74,7 +74,7 @@ class Build implements ModelInterface, ArrayAccess
         'author_avatar' => 'string',
         'author_email' => 'string',
         'link_url' => 'string',
-        'jobs' => '\DroneClient\DroneClient\Job[]'
+        'jobs' => '\DroneClient\Job[]'
     ];
 
     /**
@@ -352,7 +352,7 @@ class Build implements ModelInterface, ArrayAccess
 
     /**
      * Gets status
-     * @return \DroneClient\DroneClient\DefinitionsBuildStatus
+     * @return \DroneClient\DefinitionsBuildStatus
      */
     public function getStatus()
     {
@@ -361,7 +361,7 @@ class Build implements ModelInterface, ArrayAccess
 
     /**
      * Sets status
-     * @param \DroneClient\DroneClient\DefinitionsBuildStatus $status The current status of the build.
+     * @param \DroneClient\DefinitionsBuildStatus $status The current status of the build.
      * @return $this
      */
     public function setStatus($status)
@@ -709,7 +709,7 @@ class Build implements ModelInterface, ArrayAccess
 
     /**
      * Gets jobs
-     * @return \DroneClient\DroneClient\Job[]
+     * @return \DroneClient\Job[]
      */
     public function getJobs()
     {
@@ -718,7 +718,7 @@ class Build implements ModelInterface, ArrayAccess
 
     /**
      * Sets jobs
-     * @param \DroneClient\DroneClient\Job[] $jobs The jobs associated with this build.  A build will have multiple jobs if a matrix build was used or if a rebuild was requested.
+     * @param \DroneClient\Job[] $jobs The jobs associated with this build.  A build will have multiple jobs if a matrix build was used or if a rebuild was requested.
      * @return $this
      */
     public function setJobs($jobs)

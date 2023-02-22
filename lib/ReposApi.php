@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace DroneClient\DroneClient;
+namespace DroneClient;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,6 +37,7 @@ use DroneClient\ApiException;
 use DroneClient\Configuration;
 use DroneClient\HeaderSelector;
 use DroneClient\ObjectSerializer;
+use function GuzzleHttp\Psr7\build_query;
 
 /**
  * ReposApi Class Doc Comment
@@ -258,7 +259,7 @@ class ReposApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -268,7 +269,7 @@ class ReposApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];
@@ -467,7 +468,7 @@ class ReposApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -477,7 +478,7 @@ class ReposApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];
@@ -508,7 +509,7 @@ class ReposApi
      * @param string $name name of the repository (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DroneClient\DroneClient\Repo
+     * @return \DroneClient\Repo
      */
     public function reposOwnerNameGet($owner, $name)
     {
@@ -525,11 +526,11 @@ class ReposApi
      * @param string $name name of the repository (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DroneClient\DroneClient\Repo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DroneClient\Repo, HTTP status code, HTTP response headers (array of strings)
      */
     public function reposOwnerNameGetWithHttpInfo($owner, $name)
     {
-        $returnType = '\DroneClient\DroneClient\Repo';
+        $returnType = '\DroneClient\Repo';
         $request = $this->reposOwnerNameGetRequest($owner, $name);
 
         try {
@@ -574,7 +575,7 @@ class ReposApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\DroneClient\Repo', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\Repo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -611,7 +612,7 @@ class ReposApi
      */
     public function reposOwnerNameGetAsyncWithHttpInfo($owner, $name)
     {
-        $returnType = '\DroneClient\DroneClient\Repo';
+        $returnType = '\DroneClient\Repo';
         $request = $this->reposOwnerNameGetRequest($owner, $name);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -709,7 +710,7 @@ class ReposApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -719,7 +720,7 @@ class ReposApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];
@@ -748,10 +749,10 @@ class ReposApi
      *
      * @param string $owner owner of the repository (required)
      * @param string $name name of the repository (required)
-     * @param \DroneClient\DroneClient\Repo $repo The updated repository JSON (required)
+     * @param \DroneClient\Repo $repo The updated repository JSON (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DroneClient\DroneClient\Repo
+     * @return \DroneClient\Repo
      */
     public function reposOwnerNamePatch($owner, $name, $repo)
     {
@@ -766,14 +767,14 @@ class ReposApi
      *
      * @param string $owner owner of the repository (required)
      * @param string $name name of the repository (required)
-     * @param \DroneClient\DroneClient\Repo $repo The updated repository JSON (required)
+     * @param \DroneClient\Repo $repo The updated repository JSON (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DroneClient\DroneClient\Repo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DroneClient\Repo, HTTP status code, HTTP response headers (array of strings)
      */
     public function reposOwnerNamePatchWithHttpInfo($owner, $name, $repo)
     {
-        $returnType = '\DroneClient\DroneClient\Repo';
+        $returnType = '\DroneClient\Repo';
         $request = $this->reposOwnerNamePatchRequest($owner, $name, $repo);
 
         try {
@@ -818,7 +819,7 @@ class ReposApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\DroneClient\Repo', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\Repo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -833,7 +834,7 @@ class ReposApi
      *
      * @param string $owner owner of the repository (required)
      * @param string $name name of the repository (required)
-     * @param \DroneClient\DroneClient\Repo $repo The updated repository JSON (required)
+     * @param \DroneClient\Repo $repo The updated repository JSON (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
@@ -851,13 +852,13 @@ class ReposApi
      *
      * @param string $owner owner of the repository (required)
      * @param string $name name of the repository (required)
-     * @param \DroneClient\DroneClient\Repo $repo The updated repository JSON (required)
+     * @param \DroneClient\Repo $repo The updated repository JSON (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function reposOwnerNamePatchAsyncWithHttpInfo($owner, $name, $repo)
     {
-        $returnType = '\DroneClient\DroneClient\Repo';
+        $returnType = '\DroneClient\Repo';
         $request = $this->reposOwnerNamePatchRequest($owner, $name, $repo);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -893,7 +894,7 @@ class ReposApi
      *
      * @param string $owner owner of the repository (required)
      * @param string $name name of the repository (required)
-     * @param \DroneClient\DroneClient\Repo $repo The updated repository JSON (required)
+     * @param \DroneClient\Repo $repo The updated repository JSON (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
@@ -965,7 +966,7 @@ class ReposApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -975,7 +976,7 @@ class ReposApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];
@@ -1006,7 +1007,7 @@ class ReposApi
      * @param string $name name of the repository (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DroneClient\DroneClient\Repo
+     * @return \DroneClient\Repo
      */
     public function reposOwnerNamePost($owner, $name)
     {
@@ -1023,11 +1024,11 @@ class ReposApi
      * @param string $name name of the repository (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DroneClient\DroneClient\Repo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DroneClient\Repo, HTTP status code, HTTP response headers (array of strings)
      */
     public function reposOwnerNamePostWithHttpInfo($owner, $name)
     {
-        $returnType = '\DroneClient\DroneClient\Repo';
+        $returnType = '\DroneClient\Repo';
         $request = $this->reposOwnerNamePostRequest($owner, $name);
 
         try {
@@ -1072,7 +1073,7 @@ class ReposApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\DroneClient\Repo', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\Repo', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1109,7 +1110,7 @@ class ReposApi
      */
     public function reposOwnerNamePostAsyncWithHttpInfo($owner, $name)
     {
-        $returnType = '\DroneClient\DroneClient\Repo';
+        $returnType = '\DroneClient\Repo';
         $request = $this->reposOwnerNamePostRequest($owner, $name);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -1207,7 +1208,7 @@ class ReposApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -1217,7 +1218,7 @@ class ReposApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];

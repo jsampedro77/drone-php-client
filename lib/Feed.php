@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace DroneClient\DroneClient;
+namespace DroneClient;
 
 use \ArrayAccess;
 
@@ -59,7 +59,7 @@ class Feed implements ModelInterface, ArrayAccess
         'name' => 'string',
         'full_name' => 'string',
         'number' => 'int',
-        'status' => '\DroneClient\DroneClient\DefinitionsBuildStatus',
+        'status' => '\DroneClient\DefinitionsBuildStatus',
         'created_at' => 'int',
         'enqueued_at' => 'int',
         'started_at' => 'int',
@@ -394,7 +394,7 @@ class Feed implements ModelInterface, ArrayAccess
 
     /**
      * Gets status
-     * @return \DroneClient\DroneClient\DefinitionsBuildStatus
+     * @return \DroneClient\DefinitionsBuildStatus
      */
     public function getStatus()
     {
@@ -403,7 +403,7 @@ class Feed implements ModelInterface, ArrayAccess
 
     /**
      * Sets status
-     * @param \DroneClient\DroneClient\DefinitionsBuildStatus $status The current status of the build.
+     * @param \DroneClient\DefinitionsBuildStatus $status The current status of the build.
      * @return $this
      */
     public function setStatus($status)

@@ -114,7 +114,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reposOwnerNameGet**
-> \DroneClient\DroneClient\Repo reposOwnerNameGet($owner, $name)
+> \DroneClient\Repo reposOwnerNameGet($owner, $name)
 
 Get a repo
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\DroneClient\DroneClient\Repo**](../Model/Repo.md)
+[**\DroneClient\Repo**](../Model/Repo.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reposOwnerNamePatch**
-> \DroneClient\DroneClient\Repo reposOwnerNamePatch($owner, $name, $repo)
+> \DroneClient\Repo reposOwnerNamePatch($owner, $name, $repo)
 
 Updates a repo
 
@@ -185,7 +185,7 @@ DroneClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 
 $api_instance = new DroneClient\Api\ReposApi(new \Http\Adapter\Guzzle6\Client());
 $owner = "owner_example"; // string | owner of the repository
 $name = "name_example"; // string | name of the repository
-$repo = new \DroneClient\DroneClient\Repo(); // \DroneClient\DroneClient\Repo | The updated repository JSON
+$repo = new \DroneClient\Repo(); // \DroneClient\Repo | The updated repository JSON
 
 try {
     $result = $api_instance->reposOwnerNamePatch($owner, $name, $repo);
@@ -202,11 +202,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **string**| owner of the repository |
  **name** | **string**| name of the repository |
- **repo** | [**\DroneClient\DroneClient\Repo**](../Model/Repo.md)| The updated repository JSON |
+ **repo** | [**\DroneClient\Repo**](../Model/Repo.md)| The updated repository JSON |
 
 ### Return type
 
-[**\DroneClient\DroneClient\Repo**](../Model/Repo.md)
+[**\DroneClient\Repo**](../Model/Repo.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reposOwnerNamePost**
-> \DroneClient\DroneClient\Repo reposOwnerNamePost($owner, $name)
+> \DroneClient\Repo reposOwnerNamePost($owner, $name)
 
 Activates a repo
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\DroneClient\DroneClient\Repo**](../Model/Repo.md)
+[**\DroneClient\Repo**](../Model/Repo.md)
 
 ### Authorization
 

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **usersGet**
-> \DroneClient\DroneClient\User[] usersGet()
+> \DroneClient\User[] usersGet()
 
 Get all users
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\DroneClient\DroneClient\User[]**](../Model/User.md)
+[**\DroneClient\User[]**](../Model/User.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersLoginGet**
-> \DroneClient\DroneClient\User usersLoginGet($login)
+> \DroneClient\User usersLoginGet($login)
 
 Get a user
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\DroneClient\DroneClient\User**](../Model/User.md)
+[**\DroneClient\User**](../Model/User.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersLoginPatch**
-> \DroneClient\DroneClient\User usersLoginPatch($login, $user)
+> \DroneClient\User usersLoginPatch($login, $user)
 
 Update a user
 
@@ -175,7 +175,7 @@ DroneClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 
 
 $api_instance = new DroneClient\Api\UsersApi(new \Http\Adapter\Guzzle6\Client());
 $login = "login_example"; // string | user login
-$user = new \DroneClient\DroneClient\User(); // \DroneClient\DroneClient\User | changes to the user
+$user = new \DroneClient\User(); // \DroneClient\User | changes to the user
 
 try {
     $result = $api_instance->usersLoginPatch($login, $user);
@@ -191,11 +191,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **login** | **string**| user login |
- **user** | [**\DroneClient\DroneClient\User**](../Model/User.md)| changes to the user |
+ **user** | [**\DroneClient\User**](../Model/User.md)| changes to the user |
 
 ### Return type
 
-[**\DroneClient\DroneClient\User**](../Model/User.md)
+[**\DroneClient\User**](../Model/User.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **usersLoginPost**
-> \DroneClient\DroneClient\User usersLoginPost($login)
+> \DroneClient\User usersLoginPost($login)
 
 Create a user
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\DroneClient\DroneClient\User**](../Model/User.md)
+[**\DroneClient\User**](../Model/User.md)
 
 ### Authorization
 

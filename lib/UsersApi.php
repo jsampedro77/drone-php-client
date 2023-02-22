@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace DroneClient\DroneClient;
+namespace DroneClient;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -88,7 +88,7 @@ class UsersApi
      *
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DroneClient\DroneClient\User[]
+     * @return \DroneClient\User[]
      */
     public function usersGet()
     {
@@ -103,11 +103,11 @@ class UsersApi
      *
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DroneClient\DroneClient\User[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DroneClient\User[], HTTP status code, HTTP response headers (array of strings)
      */
     public function usersGetWithHttpInfo()
     {
-        $returnType = '\DroneClient\DroneClient\User[]';
+        $returnType = '\DroneClient\User[]';
         $request = $this->usersGetRequest();
 
         try {
@@ -152,7 +152,7 @@ class UsersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\DroneClient\User[]', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\User[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -185,7 +185,7 @@ class UsersApi
      */
     public function usersGetAsyncWithHttpInfo()
     {
-        $returnType = '\DroneClient\DroneClient\User[]';
+        $returnType = '\DroneClient\User[]';
         $request = $this->usersGetRequest();
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -265,7 +265,7 @@ class UsersApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -275,7 +275,7 @@ class UsersApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];
@@ -461,7 +461,7 @@ class UsersApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -471,7 +471,7 @@ class UsersApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];
@@ -501,7 +501,7 @@ class UsersApi
      * @param string $login user login (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DroneClient\DroneClient\User
+     * @return \DroneClient\User
      */
     public function usersLoginGet($login)
     {
@@ -517,11 +517,11 @@ class UsersApi
      * @param string $login user login (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DroneClient\DroneClient\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DroneClient\User, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersLoginGetWithHttpInfo($login)
     {
-        $returnType = '\DroneClient\DroneClient\User';
+        $returnType = '\DroneClient\User';
         $request = $this->usersLoginGetRequest($login);
 
         try {
@@ -566,7 +566,7 @@ class UsersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\DroneClient\User', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\User', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -601,7 +601,7 @@ class UsersApi
      */
     public function usersLoginGetAsyncWithHttpInfo($login)
     {
-        $returnType = '\DroneClient\DroneClient\User';
+        $returnType = '\DroneClient\User';
         $request = $this->usersLoginGetRequest($login);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -690,7 +690,7 @@ class UsersApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -700,7 +700,7 @@ class UsersApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];
@@ -728,10 +728,10 @@ class UsersApi
      * Update a user
      *
      * @param string $login user login (required)
-     * @param \DroneClient\DroneClient\User $user changes to the user (required)
+     * @param \DroneClient\User $user changes to the user (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DroneClient\DroneClient\User
+     * @return \DroneClient\User
      */
     public function usersLoginPatch($login, $user)
     {
@@ -745,14 +745,14 @@ class UsersApi
      * Update a user
      *
      * @param string $login user login (required)
-     * @param \DroneClient\DroneClient\User $user changes to the user (required)
+     * @param \DroneClient\User $user changes to the user (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DroneClient\DroneClient\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DroneClient\User, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersLoginPatchWithHttpInfo($login, $user)
     {
-        $returnType = '\DroneClient\DroneClient\User';
+        $returnType = '\DroneClient\User';
         $request = $this->usersLoginPatchRequest($login, $user);
 
         try {
@@ -797,7 +797,7 @@ class UsersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\DroneClient\User', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\User', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -811,7 +811,7 @@ class UsersApi
      * Update a user
      *
      * @param string $login user login (required)
-     * @param \DroneClient\DroneClient\User $user changes to the user (required)
+     * @param \DroneClient\User $user changes to the user (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
@@ -828,13 +828,13 @@ class UsersApi
      * Update a user
      *
      * @param string $login user login (required)
-     * @param \DroneClient\DroneClient\User $user changes to the user (required)
+     * @param \DroneClient\User $user changes to the user (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function usersLoginPatchAsyncWithHttpInfo($login, $user)
     {
-        $returnType = '\DroneClient\DroneClient\User';
+        $returnType = '\DroneClient\User';
         $request = $this->usersLoginPatchRequest($login, $user);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -869,7 +869,7 @@ class UsersApi
      * Create request for operation 'usersLoginPatch'
      *
      * @param string $login user login (required)
-     * @param \DroneClient\DroneClient\User $user changes to the user (required)
+     * @param \DroneClient\User $user changes to the user (required)
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
@@ -933,7 +933,7 @@ class UsersApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -943,7 +943,7 @@ class UsersApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];
@@ -973,7 +973,7 @@ class UsersApi
      * @param string $login user login to activate (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DroneClient\DroneClient\User
+     * @return \DroneClient\User
      */
     public function usersLoginPost($login)
     {
@@ -989,11 +989,11 @@ class UsersApi
      * @param string $login user login to activate (required)
      * @throws \DroneClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DroneClient\DroneClient\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DroneClient\User, HTTP status code, HTTP response headers (array of strings)
      */
     public function usersLoginPostWithHttpInfo($login)
     {
-        $returnType = '\DroneClient\DroneClient\User';
+        $returnType = '\DroneClient\User';
         $request = $this->usersLoginPostRequest($login);
 
         try {
@@ -1038,7 +1038,7 @@ class UsersApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\DroneClient\User', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\DroneClient\User', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1073,7 +1073,7 @@ class UsersApi
      */
     public function usersLoginPostAsyncWithHttpInfo($login)
     {
-        $returnType = '\DroneClient\DroneClient\User';
+        $returnType = '\DroneClient\User';
         $request = $this->usersLoginPostRequest($login);
 
         return $this->client->sendAsync($request)->then(function ($response) use ($returnType) {
@@ -1162,7 +1162,7 @@ class UsersApi
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
             } else {
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams); // for HTTP post (form)
+                $httpBody = http_build_query($formParams); // for HTTP post (form)
             }
         }
 
@@ -1172,7 +1172,7 @@ class UsersApi
             $queryParams['access_token'] = $apiKey;
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = http_build_query($queryParams);
         $url = $this->config->getHost() . $resourcePath . ($query ? '?' . $query : '');
 
         $defaultHeaders = [];

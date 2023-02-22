@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace DroneClient\DroneClient;
+namespace DroneClient;
 
 /**
  * Interface abstracting model access.

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | The unique identifier for the build. | [optional] 
 **number** | **int** | The job number.  This number is specified within the context of the build the job belongs to and is unique within that. | [optional] 
-**status** | [**\DroneClient\DroneClient\DefinitionsBuildStatus**](DefinitionsBuildStatus.md) | The current status of the job. | [optional] 
+**status** | [**\DroneClient\DefinitionsBuildStatus**](DefinitionsBuildStatus.md) | The current status of the job. | [optional] 
 **exit_code** | **int** | The exit code for the build. | [optional] 
 **enqueued_at** | **int** | When the job was enqueued. | [optional] 
 **started_at** | **int** | When the job began execution. | [optional] 

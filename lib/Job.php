@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace DroneClient\DroneClient;
+namespace DroneClient;
 
 use \ArrayAccess;
 
@@ -57,7 +57,7 @@ class Job implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'number' => 'int',
-        'status' => '\DroneClient\DroneClient\DefinitionsBuildStatus',
+        'status' => '\DroneClient\DefinitionsBuildStatus',
         'exit_code' => 'int',
         'enqueued_at' => 'int',
         'started_at' => 'int',
@@ -280,7 +280,6 @@ class Job implements ModelInterface, ArrayAccess
 
     /**
      * Gets status
-     * @return \DroneClient\DroneClient\DefinitionsBuildStatus
      */
     public function getStatus()
     {
@@ -289,7 +288,6 @@ class Job implements ModelInterface, ArrayAccess
 
     /**
      * Sets status
-     * @param \DroneClient\DroneClient\DefinitionsBuildStatus $status The current status of the job.
      * @return $this
      */
     public function setStatus($status)
